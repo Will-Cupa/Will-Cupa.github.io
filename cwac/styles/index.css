@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+
+/* -------Devise--------*/
+
+#Devise{
+	margin: 2rem;
+	padding: 1rem 4rem 12rem;
+	background-image : url("../images/Aside.jpg");
+	background-size : 50rem;
+	background-position : right top;
+	background-repeat : no-repeat;
+	box-shadow: 0 0 1rem 0.5rem var(--secondary-grey);
+}
+
+#Devise h1{
+	border: none;
+	color: var(--secondary-grey);
+	text-shadow: 	0 0.3rem var(--accent-red),
+					0.3rem 0.3rem var(--accent-red),
+					-0.3rem 0.3rem var(--accent-red),
+					0 -0.2rem 1.5rem var(--secondary-grey);
+	transform: perspective(10rem) rotateX(8deg);
+	margin-bottom: 3rem;
+}
+
+#Devise p{
+	color: var(--accent-red);
+	text-shadow: 0rem 0.1rem var(--secondary-grey),
+				 0.1rem 0.1rem 0.5rem var(--secondary-grey);
+	font-size: 2rem; 
+	margin: 0 10rem 0 0;
+}
+
+
+
+/*--------media queries--------*/
+
+@media(max-width:800px){
+	/*redimensionner le sous-titre de la devise*/
+	#Devise p{
+		font-size: 1.4rem;
+	}
+}
+
+@media(max-width:550px){
+	#Devise {
+		padding-left: 0;
+	}
+	
+	/*Si l'écran est trop petit,
+	cacher le sous-titre*/
+	#Devise p{
+		display: none;
+	}
+	
+}

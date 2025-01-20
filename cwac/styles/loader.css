@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/* ---- load Animation ----- */
+
+@keyframes progress_bar {
+    0% {width: 0vw;}
+ 	80% {width: 60vw;}
+    100% {width: 60vw;}
+}
+
+@keyframes appear {
+    from {font-size: 3rem;
+        visibility: visible;}
+    to {font-size: 3rem;
+        visibility: visible;}
+}
+
+@keyframes fadeout {
+	from {}
+    to {background-color: transparent;
+    	color: transparent;}
+}
+
+#loader {
+	visibility: collapse;
+	background-color: var(--background-white);
+    
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    
+    width: 100vw;
+    height: 100vh;
+	
+    display: flex;
+    flex-direction: column;
+	align-items: left;
+    justify-content: center;
+	animation: var(--loading-time) ease-in-out 0s appear, 
+            var(--fadeout-time) ease var(--fadeout-delay) fadeout;
+}
+
+#loader h4 {
+	font-size: 0;
+    color: var(--text-black);
+	
+    width: 100%;
+    text-align: center;
+    /* animation: var(--loading-time) ease-in-out 0s appear, 
+			var(--fadeout-time) ease var(--fadeout-delay) fadeout; */
+	/* cela ne sert à rien d'afficher 'Chargeemnt...' pour un temps de chargemetn court */
+}
+
+#loader-bar {
+	visibility: collapse;
+	background-color: var(--primary-orange);
+	
+    height: 1rem;
+	border-radius: 1rem;
+    animation: var(--loading-time) ease-in-out 0s appear,
+            var(--loading-time) ease-in-out 0s progress_bar,
+            var(--fadeout-time) ease var(--fadeout-delay) fadeout;
+}
+
+#loader-bar-shadow {
+	visibility: collapse;
+	background-color: var(--secondary-grey);
+	
+    height: 1rem;
+    margin: 0 20% 20%;
+	border-radius: 1rem;
+    animation: var(--loading-time) ease-in-out 0s appear, 
+			var(--fadeout-time) ease-in-out var(--fadeout-delay) fadeout;
+}

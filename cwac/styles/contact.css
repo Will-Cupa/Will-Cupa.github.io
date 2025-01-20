@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/*--conteneur du texte de l'article--*/
+article .flexContainer{
+	/*remplis l'article en largeur*/
+	width: 100%;
+}
+
+
+#Mail{
+	/*Colore l'adresse mail*/
+	color: var(--accent-red);
+}
+
+/*---------Formulaire---------*/
+
+article .formContainer{
+	width: 100%;
+	margin: 4rem;
+	text-align: center;
+}
+
+form{
+	display: inline-block;
+	text-align: left;
+}
+
+/*--zones d'entrée de texte--*/
+input{
+	width: 20rem;
+	margin: 0.4rem;
+	padding: 2px;
+	border: solid var(--primary-orange);
+	border-radius: 0.2rem;
+	font-family: 'Foldit', sans-serif;
+	font-weight: 700;
+}
+
+/*--boutons--*/
+input[type=submit], input[type=reset]{
+	width: 40%;
+	padding: 0.4rem;
+	background-color: var(--primary-orange);
+	color: var(--background-white);
+	border: none;
+	border-radius: 0.2rem;
+}
+
+input[type=submit]:hover, input[type=reset]:hover{
+	box-shadow: 0 0 10px var(--primary-orange);
+	transition: box-shadow 0.15s ease-in-out;
+}
+
+input[type=submit]:active, input[type=reset]:active{
+	background-color: var(--accent-red);
+	box-shadow: 0 0 10px var(--accent-red);
+	
+}
+	
+/*--Titre des inputs--*/
+label{
+	font-family: 'Big Shoulders Display', sans-serif;
+	font-weight: 700;
+}

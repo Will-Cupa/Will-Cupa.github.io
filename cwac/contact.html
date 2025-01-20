@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Nous contacter</title>
+		<link rel="shortcut icon" href="images/logoCWACTrans.png">
+		<link rel="stylesheet" href="styles/common.css"/>
+		<link rel="stylesheet" href="styles/contact.css"/>
+	</head>
+	<body>
+		<a id="top"></a>
+		<div id="loader">
+			<h4>Chargement...</h4>
+            <div id="loader-bar-shadow">
+				<div id="loader-bar"></div>
+			</div>
+        </div>
+		<header>
+			<a href="./index.html">
+				<img class="logo" src="images/logoCWACTrans.png" alt="Logo de l'école"/>
+			</a>
+			<nav>
+				<div>
+					<a href="./index.html"><p>Acceuil</p></a>
+					<!--menu déroulant-->
+					<div>
+						<!--lien vers section de page-->
+						<a href="./index.html#Actu" class="innerLink">Actualités</a>
+						<a href="./index.html#Presentation" class="innerLink">Présentation</a>
+					</div>
+				</div>
+				<div>
+					<a href="./formation.html"><p>Informations</p></a>
+					<!--menu déroulant-->
+					<div>
+						<!--lien vers section de page-->
+						<a href="./formation.html#Formations" class="innerLink">Formations</a>
+						<a href="./formation.html#Profs" class="innerLink">Professeurs</a>
+					</div>
+				</div>
+				<div>
+					<!--page actuelle-->
+					<a class="ici" href="#top"><p>Contact</p></a>
+				</div>
+			</nav>
+		</header>
+		
+		<main>
+			<section>
+				<h1>Contacts</h1>
+				<article>
+					<div class="flexContainer">
+						<h2>Contact</h2>
+						<p>Pour nous contacter, veuillez-remplir le formulaire en bas de page. 
+						Vous pouvez également nous envoyer un mail à l'adresse suivante : <a id="Mail" href="mailto:suph.contact@u-psud.fr?subject=Contact">suph.contact@u-psud.fr</a></p>
+					</div>
+				</article>
+				<article >
+					<div class="flexContainer">
+						<h2>Map</h2>
+						<!--intégration Google Map-->
+						<iframe src="https://maps.google.com/maps?q=48.88453915766882,2.307798635582022&z=11&output=embed"></iframe> 
+					</div>
+				</article>
+				<article>
+					<div class="formContainer">
+						<h2>Formulaire</h2>
+						<!--formulaire-->
+						<form>
+							<label for="name">Nom</label><br>
+							<input type="text" id="name" placeholder="nom"/><br>
+							
+							<label for="firstname">Prénom</label><br>
+							<input type="text" id="firstname" placeholder="prenom"/><br>
+							
+							<label for="mail">Adresse Email</label><br>
+							<input type="email" id="mail" placeholder="email" pattern=".*@.*\..*"/><br>
+							
+							<label for="phone">Numéro de téléphone</label><br>
+							<input type="tel" id="phone" placeholder="ex : 06 69 98 83 37" pattern="[0-9]{10}"><br>
+							
+							<label for="message">Votre message</label><br>
+							<input type="text" id="message" placeholder="Entrer un message"/><br>
+							
+							<input type="submit" value="Valider"/>
+							<input type="reset" value="Réinitialiser"/>
+						</form>
+					</div>
+				</article>
+			</section>
+		</main>
+		<footer>
+			<p>Site web par Alain Sandoz, Vianney Jacquemot</p>
+			<a href="rapport/Rapport-CWAC_AlainSandoz_VianneyJacquemot.pdf">rapport (format pdf)</a><br>
+			<a href="rapport/Rapport-CWAC_AlainSandoz_VianneyJacquemot.docx">rapport (format docx)</a>
+			<p>
+				<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img style="border:0;width:88px;height:31px"
+						src="http://jigsaw.w3.org/css-validator/images/vcss"
+						alt="CSS Valide !" />
+				</a>
+			</p>
+		</footer>
+	</body>
+</html>

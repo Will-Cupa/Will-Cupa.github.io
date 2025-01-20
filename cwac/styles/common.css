@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+/*import des fichiers css*/
+@import url('./flexbox.css');
+@import url('./header.css');
+@import url('./loader.css');
+
+/*------default-----*/
+
+* {
+	/*retirer les marges par défauts du navigateur*/
+    padding: 0; 
+    margin: 0;
+}
+
+/*------color------*/
+:root{
+	/*----animation custom properties-----*/
+	--loading-time: 0.4s; /*(ajustable) durée de l'animation de chargement */
+	--f-l-ratio: calc(1/3); /*(ajustable) ratio de la durée du fadeout sur le temps de l'animation de chargement */
+	--fadeout-time: calc(var(--loading-time) * var(--f-l-ratio)); /*calcul automatique, ne pas modifier*/
+	--fadeout-delay: calc(var(--loading-time) - var(--fadeout-time)); /*calcul automatique, ne pas modifier*/
+	/*--lightmode--*/
+	--text-black: #180202 ;
+	--background-white: #FAFAFA;
+	--primary-orange: #FF6D4D ;
+	--secondary-grey: #E6E6E5;
+	--accent-red: #D12600;
+}
+
+/*------fonts-----*/
+
+/*Chargement des polices*/
+@font-face {
+	font-family: 'Big Shoulders Display';
+	src:
+		/*Police dynamique : plusieurs niveau de font-weight*/
+		url("../fonts/BigShouldersDisplay-VariableFont_wght.ttf");
+	
+	font-family: 'Titillium Web';
+	src:
+		url("../fonts/TitilliumWeb-SemiBold.ttf");
+	
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Big Shoulders Display', sans-serif;
+	font-weight: 900;
+	color: var(--text-black);
+}
+
+p, a {
+	font-family: 'Titillium Web', sans-serif;
+	color: var(--text-black);
+}
+
+/*--------body---------*/
+
+body{
+	background-color: var(--background-white);
+}
+
+h1{
+	font-size: 4rem;
+	margin: 2rem;
+	border-bottom: 0.5vw solid var(--primary-orange);
+}
+
+h2{
+	font-size: 3rem;
+	margin-bottom: 0.8rem;
+}
+
+p{
+	font-size: 1.2rem;
+	margin: 1rem;
+}
+
+/*Accentuer certains mots*/
+span.accent{
+	color: var(--accent-red);
+}
+/*------------footer-----------*/
+
+footer{
+	background-color: var(--text-black);
+	border-top: 2px var(--secondary-grey) solid;
+	text-align: right;
+	padding: 1rem;
+}
+
+
+footer p, footer a{
+	margin-right: 0;
+	color: var(--background-white);
+	font-size: 1rem;
+	font-style: italic;
+}
+
+footer a:hover{
+	color: var(--accent-red);
+}
+
+/*----------Media Queries---------*/
+
+@media(max-width:1000px){
+	
+	h1{
+		font-size: 3rem;
+	}
+	
+	h2{
+		font-size: 2rem;
+	}
+	
+	p{
+		font-size: 0.8rem;
+	}
+}
+
+@media(max-width:800px){
+	
+	h1{
+		font-size: 3rem;
+	}
+	
+	h2{
+		font-size: 1.6rem;
+	}
+	
+	p{
+		font-size: 0.7rem;
+	}
+}
+
+@media(max-width:550px){
+	
+	h1{
+		font-size: 2rem;
+	}
+	
+	
+	h2{
+		font-size: 1.2rem;
+	}
+	
+	p{
+		font-size: 0.5rem;
+	}
+}

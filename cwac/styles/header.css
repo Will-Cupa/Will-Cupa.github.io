@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+
+/*------Navigation------*/
+
+/*scrolling doux pour toute la navigation*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+Marge de scrolling, pour éviter 
+que la barre de navigation ne cache les titres
+*/
+section {
+	scroll-margin-top: 100px;
+}
+
+/*--------Header--------*/
+header {
+	background-color: var(--background-white);
+	position: sticky;
+    display: flex;
+    border-bottom: 2px var(--secondary-grey) solid;
+	z-index: 1;
+	top: 0;
+	width: 100%
+}
+
+/*--logo--*/
+header .logo{
+	max-width: 5rem;
+	align-self: center;
+}
+
+/*--Liens de navigation--*/
+nav {
+    display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+nav a{
+	display: inline-block;
+	width: 8rem;
+	text-decoration: none;
+}
+
+nav a p{
+	font-family: 'Big Shoulders Display', sans-serif;
+	font-weight: 700;
+	font-size: 1.5rem;
+	display: block;
+	background-color: var(--background-white);
+	border: 2px var(--secondary-grey);
+	border-style: none none solid;
+	border-radius: 0;
+	text-align: center;
+
+	margin: 0;
+	padding: 0.8rem 0 0.8rem;
+	
+	transition: border 0.3s, 
+				border-radius 0.3s, 
+				text-shadow 0.3s, 
+				margin 0.3s,
+				padding 0.3s;
+	transition-timing-function: ease-out;
+}
+
+nav a.ici p {
+	border: 2px var(--accent-red);
+	border-style: none none solid;
+}
+
+nav a:hover p{
+	margin-top: 0.8rem;
+	padding: 0.6rem 0.2rem 0.4rem;
+	
+	border: 2px var(--accent-red);
+	border-style: none none solid;
+	border-radius: 0.4rem;
+	
+	text-shadow: 0rem 0.6rem 1rem #d1260052;
+	transition: border 0.2s, 
+				border-radius 0.2s, 
+				text-shadow 0.2s, 
+				margin 0.2s,
+				padding 0.2s;
+	transition-timing-function: ease-in-out; 
+}
+
+nav a:active p{
+	text-shadow: 0 0.6rem 1rem var(--accent-red);
+	transition-duration: 0s;
+}
+
+/*-----------Menu déroulant------------*/
+
+
+/*--div qui contient les liens de navigations--*/
+nav div{
+	width: 8rem;
+	height: 3.5rem;
+	text-align: center;
+	background-color: var(--background-white);
+}
+
+/*--Lien vers une partie de la page--*/
+div .innerLink{
+	display: table;
+	
+	font-family: 'Big Shoulders Display', sans-serif;
+	font-weight: 700;
+	font-size: 1.2rem;
+	
+	padding: 0.7rem 0 0.7rem;
+	width: 8rem;
+	
+	background-color: var(--background-white);
+	border: 2px var(--secondary-grey);
+	border-style: none none solid;
+	border-radius: 0.2rem;
+	
+	transition-timing-function: ease-in-out; 
+}
+
+/*--Lien vers une partie de la page : survol--*/
+
+div .innerLink:hover{
+	text-shadow: 0rem 0.6rem 1rem #d1260052;
+	
+	border-color: var(--accent-red);
+	border-radius: 0.4rem;
+	
+	transition: border 0.2s, 
+				border-radius 0.2s;
+	
+	transition-timing-function: ease-in-out; 
+}
+
+a.innerLink:active{
+	text-shadow: 0 0.5rem 1rem var(--accent-red);
+	transition-duration: 0s;
+}
+
+/*cacher les enfants du menu*/
+nav div div{
+	visibility: collapse;
+	position: absolute;
+}
+
+/*afficher au survol*/
+nav a:hover + div{
+	visibility: visible;
+}
+
+/*laisser afficher au survol du fils*/
+div:hover{
+	visibility: visible;
+}
+
+/*----------Media Queries-----------*/
+
+@media(max-width:550px){
+	
+	nav div {
+		width: 6rem;
+		font-size: 1.2rem;
+	}
+	
+	nav a{
+		width: 6rem;
+	}
+	
+	div .innerLink{
+		width: 6rem;
+	}
+	
+}

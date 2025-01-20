@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+/*----------article----------*/
+
+article{
+	display: flex;
+}
+
+article:nth-child(odd){
+	background-color: var(--secondary-grey);
+}
+
+/*--conteneur du texte de l'article--*/
+article .flexContainer{
+	/*remplis la moitié de l'article en largeur*/
+	width: 50%;
+	margin: 8rem;
+}
+
+/*--image de l'article--*/
+article img{
+	/*remplis la moitié de l'article en largeur*/
+	width: 50%;
+	/*Aligne l'image au centre pour l'empêcher de s'étirer*/
+	align-self: center;
+	margin: 4rem;
+	border: 4px solid var(--primary-orange);
+	box-shadow: 0 0 10px var(--primary-orange);
+	border-radius: 2px;
+	transition: transform 0.5s ease-in-out;
+}
+
+article img:hover{
+	border: 4px solid var(--primary-orange);
+	box-shadow: 0 0 10px var(--accent-red);
+	z-index: 2;
+	transform: scale(1.2);
+	transition: transform 0.5s ease-in-out;
+}
+
+/*--informations complémentaires--*/
+article aside{
+	/*remplis la moitié de l'article en largeur*/
+	width: 50%;
+	padding: 2rem;
+	margin: 4rem;
+	box-shadow: 0 0 10px var(--secondary-grey);
+}
+
+/*--intégrations(vidéo, map)--*/
+iframe, video {
+	/*Centrer l'élément avec les marges*/
+	margin:auto;
+	border:0;
+	width: 60vw;
+	/*Ajuster la taille tout en préservant le ratio*/
+	height: calc(9/16*60vw);
+}
+
+/*--Ombre dure--*/
+iframe, video, form {
+	/*Ajoute une ombre dure*/
+	box-shadow: 10px 10px var(--primary-orange);
+}
+
+
+
+
+/*----------Media Queries-----------*/
+
+@media(max-width:1000px){
+	
+	/*--conteneur du texte de l'article--*/
+	article .flexContainer{
+		margin: 2rem;
+		margin-top: 4rem;
+	}
+}
+
+@media(min-width:550px){
+	/*Si l'écran est suffisamment grand, 
+	alterner la disposition des images*/
+	article:nth-child(odd) img{
+		order: -1;
+	}
+}
+
+@media(max-width:800px){
+	
+	/*--image de l'article--*/
+	article img{
+		margin: 2rem;
+	}
+	
+	/*
+	article *{
+		color : green;
+	}
+	*/
+}
+
+@media(max-width:550px){
+
+	article{
+		/*Si l'écran est trop petit,
+		ranger les éléments verticalement*/
+		flex-direction: column-reverse;
+		/*L'ordre est inversé pour que l'image soit en premier,
+		car les images sont par défaut à droite, donc à la fin*/
+	}
+	
+	/*--image de l'article--*/
+	article img{
+		/*remplis la moitié de l'article en hauteur*/
+		height: 50%;
+		margin: 1rem;
+	}
+	
+	/*--conteneur du texte de l'article--*/
+	article .flexContainer{
+		/*remplis l'article en largeur*/
+		width: 100%;
+		/*remplis la moitié de l'article en hauteur*/
+		height: 50%;
+		
+		margin: 1rem;
+	}
+	
+}
