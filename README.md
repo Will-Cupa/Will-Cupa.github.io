@@ -1,1 +1,3 @@
-My personal website, you can check it [here](Will-Cupa.github.io)
+My personal website.
+
+Check it [here](Will-Cupa.github.io)
