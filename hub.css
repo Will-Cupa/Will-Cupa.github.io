@@ -1,0 +1,6 @@
+a {
+  display : block; /* or inline-block */
+}
+a iframe {
+  pointer-events : none;
+}
