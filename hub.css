@@ -1,6 +1,13 @@
 a {
   display : block; /* or inline-block */
+  margin : 1rem;
 }
 a iframe {
   pointer-events : none;
+  border-radius: 1rem;
+  border: none;
+}
+
+div#wrapper {
+  display : flex;
 }
